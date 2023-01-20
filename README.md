@@ -7,7 +7,7 @@ launch Screen is a Python library for creating launching (loading) screen.
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install launchscreen.
 
 ```bash
-pip install mahinlaunchscreen
+pip install launchscreen
 ```
 
 ## Usage
