@@ -9,10 +9,17 @@ Facebook: https://facebook.com/root.mahin
 __author__ = "Mahin Bin Hasan"
 __email__ = "allmahin149@gmail.com"
 __status__ = "planning"
-class screen:
-    def screen(image,deltime):
+import threading
+class screen(object):
+    def __init__(self,image,deltime):
+        self.image=image
+        self.deltime=deltime
+    def disp(self):
+        image=self.image
+        deltime=self.deltime
         from tkinter import PhotoImage,Tk,Canvas
         import time
+        
 
 
         wel =Tk()
@@ -36,11 +43,14 @@ class screen:
         wel.after(deltime,lambda:wel.destroy())
 
         wel.mainloop()
+    def run(self):       
+        td = threading.Thread(target=self.disp)
+        td.start()
 class help:
     def commands():
         p="""
         Usage: 
-        from launchscreen import screen
-        screen.screen('download.png')
+        from launchscreen import *
+        p=screen('d.png',5000).run()
         """
         return p
